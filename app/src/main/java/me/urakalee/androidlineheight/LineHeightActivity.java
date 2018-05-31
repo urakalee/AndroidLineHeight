@@ -2,6 +2,7 @@ package me.urakalee.androidlineheight;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -10,7 +11,7 @@ import me.urakalee.androidlineheight.FontSizeSelectView.FontSizeSelectViewDelega
 /**
  * @author liqiang
  */
-public class DefaultLineHeightActivity extends AppCompatActivity {
+public class LineHeightActivity extends AppCompatActivity {
 
     private FontSizeSelectView fontSelect;
 
@@ -20,21 +21,21 @@ public class DefaultLineHeightActivity extends AppCompatActivity {
     private ImageView image1Line4;
     private ImageView imageMultiLine;
 
-    private DefaultLineHeightTextView text1Line1;
-    private DefaultLineHeightTextView text1Line2;
-    private DefaultLineHeightTextView text1Line3;
-    private DefaultLineHeightTextView text1Line4;
-    private DefaultLineHeightTextView textMultiLine;
+    private LineHeightTextView text1Line1;
+    private LineHeightTextView text1Line2;
+    private LineHeightTextView text1Line3;
+    private LineHeightTextView text1Line4;
+    private LineHeightTextView textMultiLine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_default_line_height);
+        setContentView(R.layout.activity_line_height);
         fontSelect = findViewById(R.id.fontSelect);
         fontSelect.setDelegate(new FontSizeSelectViewDelegate() {
             @Override
             public void onFontSizeChange(int fontSizeInDp, int lineSpaceInDp) {
-                DefaultLineHeightActivity.this.onFontSizeChange(fontSizeInDp, lineSpaceInDp);
+                LineHeightActivity.this.onFontSizeChange(fontSizeInDp, lineSpaceInDp);
             }
         });
         image1Line1 = findViewById(R.id.image1Line1);
@@ -49,40 +50,44 @@ public class DefaultLineHeightActivity extends AppCompatActivity {
         textMultiLine = findViewById(R.id.textMultiLine);
     }
 
-    private void onFontSizeChange(int fontSizeInDp, int lineSpaceInDp) {
-        String line1Id = (lineSpaceInDp == 0)
+    private void onFontSizeChange(int fontSizeInDp, int lineHeightInDp) {
+        String line1Id = (lineHeightInDp == 0)
                 ? String.format("size%d_1line", fontSizeInDp)
-                : String.format("size%d_1line_space%d", fontSizeInDp, lineSpaceInDp);
+                : String.format("size%d_1line_height%d", fontSizeInDp, lineHeightInDp);
         int resId1Line = getResources().getIdentifier(line1Id,
                 "drawable", getPackageName());
-        String multiLineId = (lineSpaceInDp == 0)
+        String multiLineId = (lineHeightInDp == 0)
                 ? String.format("size%d_multiline", fontSizeInDp)
-                : String.format("size%d_multiline_space%d", fontSizeInDp, lineSpaceInDp);
+                : String.format("size%d_multiline_height%d", fontSizeInDp, lineHeightInDp);
         int resIdMultiLine = getResources().getIdentifier(multiLineId,
                 "drawable", getPackageName());
         image1Line1.setImageResource(resId1Line);
         image1Line2.setImageResource(resId1Line);
         image1Line3.setImageResource(resId1Line);
         image1Line4.setImageResource(resId1Line);
+        text1Line1.setVisibility(resId1Line == 0 ? View.GONE : View.VISIBLE);
+        text1Line2.setVisibility(resId1Line == 0 ? View.GONE : View.INVISIBLE);
+        text1Line3.setVisibility(resId1Line == 0 ? View.GONE : View.VISIBLE);
+        text1Line4.setVisibility(resId1Line == 0 ? View.GONE : View.INVISIBLE);
         imageMultiLine.setImageResource(resIdMultiLine);
         text1Line1.setText(String.format("%d一行", fontSizeInDp));
-        text1Line1.setTextSizeAndLineSpaceInDp(fontSizeInDp, lineSpaceInDp);
+        text1Line1.setTextSizeAndLineHeightInDp(fontSizeInDp, lineHeightInDp);
         text1Line2.setText(String.format("%d一行", fontSizeInDp));
-        text1Line2.setTextSizeAndLineSpaceInDp(fontSizeInDp, lineSpaceInDp);
+        text1Line2.setTextSizeAndLineHeightInDp(fontSizeInDp, lineHeightInDp);
         text1Line3.setText(String.format("%d一行", fontSizeInDp));
-        text1Line3.setTextSizeAndLineSpaceInDp(fontSizeInDp, lineSpaceInDp);
+        text1Line3.setTextSizeAndLineHeightInDp(fontSizeInDp, lineHeightInDp);
         text1Line4.setText(String.format("%d一行", fontSizeInDp));
-        text1Line4.setTextSizeAndLineSpaceInDp(fontSizeInDp, lineSpaceInDp);
+        text1Line4.setTextSizeAndLineHeightInDp(fontSizeInDp, lineHeightInDp);
         textMultiLine.setText(String.format("%d多行\n%d多行\n%d多行\n%d多行",
                 fontSizeInDp, fontSizeInDp, fontSizeInDp, fontSizeInDp));
-        textMultiLine.setTextSizeAndLineSpaceInDp(fontSizeInDp, lineSpaceInDp);
+        textMultiLine.setTextSizeAndLineHeightInDp(fontSizeInDp, lineHeightInDp);
 
         fontSelect.postDelayed(new Runnable() {
             @Override
             public void run() {
                 int image1LineHeight = image1Line1.getHeight();
                 int text1LineHeight = text1Line1.getHeight();
-                Toast.makeText(DefaultLineHeightActivity.this,
+                Toast.makeText(LineHeightActivity.this,
                         String.format("diff: %d", image1LineHeight - text1LineHeight),
                         Toast.LENGTH_SHORT).show();
             }

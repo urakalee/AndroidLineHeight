@@ -37,12 +37,15 @@ public class FontSizeSelectView extends AutoCompleteTextView {
                 "13",
                 "14",
                 "15",
-                "15+4",
+                "15+25",
+                "15+30",
                 "16",
                 "17",
                 "19",
                 "22",
-                "30"
+                "30",
+                "30+46",
+                "30+51"
         }));
         setOnTouchListener(new OnTouchListener() {
             @Override

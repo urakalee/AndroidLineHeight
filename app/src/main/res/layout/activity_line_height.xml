@@ -78,15 +78,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                <me.urakalee.androidlineheight.LineHeightTextView
                     android:id="@+id/text1Line1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#1f00ff00"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:background="#1f00ff00" />
 
-                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                <me.urakalee.androidlineheight.LineHeightTextView
                     android:id="@+id/text1Line2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -95,7 +93,7 @@
                     android:singleLine="true"
                     android:visibility="invisible" />
 
-                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                <me.urakalee.androidlineheight.LineHeightTextView
                     android:id="@+id/text1Line3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,7 +101,7 @@
                     android:maxLines="1"
                     android:singleLine="true" />
 
-                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                <me.urakalee.androidlineheight.LineHeightTextView
                     android:id="@+id/text1Line4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,11 +112,12 @@
 
             </LinearLayout>
 
-            <me.urakalee.androidlineheight.DefaultLineHeightTextView
+            <me.urakalee.androidlineheight.LineHeightTextView
                 android:id="@+id/textMultiLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#1f0000ff" />
+                android:background="#1f0000ff"
+                android:maxLines="4" />
 
         </LinearLayout>
 
