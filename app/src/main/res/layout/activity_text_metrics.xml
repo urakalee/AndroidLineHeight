@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <me.urakalee.androidlineheight.MetricsTextView
+            android:id="@+id/metricsText1Line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#eeeeee"
+            android:lineSpacingExtra="10dp"
+            android:text="我"
+            android:textSize="120dp" />
+
+        <TextView
+            android:id="@+id/metricsText1Line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:includeFontPadding="false"
+            android:text="我"
+            android:textSize="120dp" />
+
+    </LinearLayout>
+
+    <me.urakalee.androidlineheight.MetricsTextView
+        android:id="@+id/metricsTextMultiLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#eeeeee"
+        android:lineSpacingExtra="10dp"
+        android:text="我是\n多行"
+        android:textSize="120dp" />
+
+</LinearLayout>

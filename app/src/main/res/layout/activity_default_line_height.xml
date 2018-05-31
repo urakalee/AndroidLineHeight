@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutProject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Font Size">
+
+        <me.urakalee.androidlineheight.FontSizeSelectView
+            android:id="@+id/fontSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image1Line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="matrix" />
+
+                <ImageView
+                    android:id="@+id/image1Line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="matrix"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/image1Line3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/image1Line4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="matrix"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageMultiLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                    android:id="@+id/text1Line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1f00ff00"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                    android:id="@+id/text1Line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1f0000ff"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:visibility="invisible" />
+
+                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                    android:id="@+id/text1Line3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1fffff00"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+                <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                    android:id="@+id/text1Line4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1f00ffff"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <me.urakalee.androidlineheight.DefaultLineHeightTextView
+                android:id="@+id/textMultiLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#1f0000ff" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
